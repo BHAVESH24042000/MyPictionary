@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android projects/MyPictionary/app/src/main/res/layout/activity_main.xml" value="0.1515625" />
+        <entry key="..\:/android projects/MyPictionary/app/src/main/res/layout/activity_setup.xml" value="0.16770833333333332" />
+        <entry key="..\:/android projects/MyPictionary/app/src/main/res/layout/fragment_.xml" value="0.16770833333333332" />
+        <entry key="..\:/android projects/MyPictionary/app/src/main/res/layout/fragment_select_room.xml" value="0.16770833333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
