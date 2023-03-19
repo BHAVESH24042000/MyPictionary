@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.mypictionary.R
 import com.example.mypictionary.databinding.ActivitySetupBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SetupActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivitySetupBinding
@@ -13,6 +15,6 @@ class SetupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivitySetupBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_setup)
+        setContentView(binding.root)
     }
 }

@@ -2,6 +2,9 @@ package com.example.mypictionary.di
 
 import android.content.Context
 import com.example.mypictionary.remote.api.MyPictionaryApiService
+import com.example.mypictionary.repository.DefaultSetupRepository
+import com.example.mypictionary.repository.SetupRepository
+import com.example.mypictionary.util.Keys
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -36,7 +39,7 @@ object AppModule {
     @Provides
     fun provideApiService(okHttpClient: OkHttpClient): MyPictionaryApiService {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(Keys.HTTP_BASE_URL_LOCALHOST)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build().create(MyPictionaryApiService::class.java)
@@ -48,5 +51,11 @@ object AppModule {
         return context
     }
 
+    @Singleton
+    @Provides
+    fun providesSetuprepository(
+        myPictionaryApiService: MyPictionaryApiService,
+        @ApplicationContext context: Context
+    ) : SetupRepository = DefaultSetupRepository(myPictionaryApiService, context)
 
 }

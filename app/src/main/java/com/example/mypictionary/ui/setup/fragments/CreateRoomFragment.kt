@@ -7,17 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mypictionary.R
 import com.example.mypictionary.databinding.FragmentCreateRoomBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CreateRoomFragment : Fragment() {
 
     private var _binding : FragmentCreateRoomBinding? = null
     private val binding: FragmentCreateRoomBinding
         get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -10,6 +10,7 @@ import com.example.mypictionary.util.Keys.MAX_ROOM_NAME_LENGTH
 import com.example.mypictionary.util.Keys.MAX_USERNAME_LENGTH
 import com.example.mypictionary.util.Keys.MIN_ROOM_NAME_LENGTH
 import com.example.mypictionary.util.Keys.MIN_USERNAME_LENGTH
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,6 +19,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class SetupViewModel @Inject constructor(
     private val setupRepository: SetupRepository
 ) : ViewModel() {
@@ -101,20 +103,17 @@ class SetupViewModel @Inject constructor(
     // things are in dispatchers.main as flows handling should be done in main thread.
     //and retrofit designed in such way that it handles automatically network calls in IO mode automatically.
 
-
 }
 
 sealed class SetupEvent {
     object InputEmptyError : SetupEvent()
     object InputTooShortError : SetupEvent()
     object InputTooLongError : SetupEvent()
-    object GetRoomLoadingError : SetupEvent()
     object GetRoomLoadingEvent : SetupEvent()
     object GetRoomEmptyEvent : SetupEvent()
     data class CreateRoomEvent(val room: Room) : SetupEvent()
     data class CreateRoomErrorEvent(val message: String) : SetupEvent()
     data class NavigateToSelectRoomEvent(val username: String) : SetupEvent()
-    data class NavigateToSelectRoomErrorEvent(val error: String) : SetupEvent()
     data class GetRoomEvent(val rooms: List<Room>) : SetupEvent()
     data class GetRoomErrorEvent(val error: String) : SetupEvent()
     data class JoinRoomEvent(val roomName: String) : SetupEvent()

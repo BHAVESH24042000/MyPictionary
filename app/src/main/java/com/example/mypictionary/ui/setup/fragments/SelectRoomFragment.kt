@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mypictionary.R
 import com.example.mypictionary.databinding.FragmentSelectRoomBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectRoomFragment : Fragment() {
 
     private var _binding : FragmentSelectRoomBinding? = null
